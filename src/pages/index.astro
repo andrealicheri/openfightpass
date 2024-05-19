@@ -1,0 +1,81 @@
+---
+import Skeleton from "../layout/Skeleton.astro";
+import Ql from "../components/ql.astro";
+const services = [
+    "ufc",
+    "pride",
+    "pancrase",
+    "one",
+    "thaifight",
+    "maxmuaythai",
+    "rajadamnern",
+    "wlc",
+    "k1",
+    "rise",
+    "karatecombat",
+    "pbc",
+    "gbp"
+];
+---
+
+<Skeleton title="Home">
+    <h1 style="text-align: center;">OPEN FIGHT PASS</h1>
+    
+        <p>
+            The Open Fight Pass is a simple webiste designed to help users
+            navigate free fighting content on Youtube. The purpose of the
+            website is to offer the casual MMA enjoyer a UFC Fight Pass
+            experience, without having to pay 100$/year to enjoy some fights.
+            You can find below all the services available to browse.
+        </p>
+
+        <!-- 
+        <p style="font-size: 1.2rem"><b>Services available:</b></p>
+        <p>
+            <ul>
+                <Ql href="ufc" category="MMA">UFC</Ql>
+                <Ql href="one" category="MMA">ONE Championship</Ql>
+                <Ql href="pancrase" category="MMA">Pancrase</Ql>
+                <Ql href="pride" category="MMA">Pride FC</Ql>
+                <Ql href="thaifight" category="Muay Thai">Thai Fight</Ql>
+                <Ql href="maxmuaythai" category="Muay Thai">Max Muay Thai</Ql>
+                <Ql href="rajadamnern" category="Muay Thai"
+                    >Rajadamnern Stadium</Ql
+                >
+                <Ql href="wlc" category="Lethwei">WLC</Ql>
+                <Ql href="k1" category="KickBoxing">K1</Ql>
+                <Ql href="rise" category="KickBoxing">RISE</Ql>
+                <Ql href="karatecombat" category="KickBoxing">Karate Combat</Ql>
+                <Ql href="pbc" category="Boxing">PBC</Ql>
+                <Ql href="gbp" category="Boxing">GBP</Ql>
+            </ul>
+        </p>
+        -->
+    <main>
+        <div id="services">
+            {services.map((item) => <Ql name={item} />)}
+        </div>
+    </main>
+    <style>
+        h1 {
+            font-size: 5rem;
+            font-family: ufc;
+        }
+
+        main {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        #services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        p {
+            padding-left: 30%;
+            padding-right: 30%;
+        }
+    </style>
+</Skeleton>
