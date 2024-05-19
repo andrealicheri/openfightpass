@@ -4,7 +4,7 @@ const { playlistId, title } = Astro.props;
 ---
 
 <Skeleton title={title}>
-    <a id="home" href="/">🢘 BACK TO HOME</a>
+    <a id="home" href="/">BACK TO HOME</a>
     <div id="view">
         <div style="flex: 1;" id="description">
             <h1>{title}</h1>
@@ -12,7 +12,7 @@ const { playlistId, title } = Astro.props;
                 <slot />
             </p>
         </div>
-        <div style="flex: 1;">
+        <div style="flex: 1;" id="#phoneview">
             <iframe src={"https://piped.video/playlist?list=" + playlistId}
             ></iframe>
         </div>
@@ -23,6 +23,16 @@ const { playlistId, title } = Astro.props;
             display: flex;
             width: 99.855vw;
             height: 99.855vh;
+        }
+        @media (max-width: 768px) {
+            #view {
+                flex-direction: column; 
+                height: 189.855vh
+            }
+
+            iframe {
+                height: 90vh;
+            }
         }
 
         #playlist {

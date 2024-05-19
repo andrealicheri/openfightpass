@@ -19,13 +19,13 @@ const services = [
 ---
 
 <Skeleton title="Home">
-    <h1 style="text-align: center;">OPEN FIGHT PASS</h1>
+    <h1 style="text-align: center; padding: 0px; margin: 0px;">OPEN FIGHT PASS</h1>
     
-        <p>
+        <p style="text-align: center;">
             The Open Fight Pass is a simple webiste designed to help users
-            navigate free fighting content on Youtube. The purpose of the
+            navigate free fighting content on Youtube. <br /> The purpose of the
             website is to offer the casual MMA enjoyer a UFC Fight Pass
-            experience, without having to pay 100$/year to enjoy some fights.
+            experience, without having to pay 100$/year to enjoy some fights. <br />
             You can find below all the services available to browse.
         </p>
 
@@ -49,13 +49,17 @@ const services = [
 
         #services {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
+            
         }
 
         p {
-            padding-left: 30%;
-            padding-right: 30%;
+            
+            padding-left: min(4%);
+            padding-right: min(4%);
+            padding-bottom: 20px;
+        
         }
     </style>
 </Skeleton>
